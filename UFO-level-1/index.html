@@ -60,6 +60,17 @@
                   <th class="table-head">Duration</th>
                   <th class="table-head">Comments</th>
                 </tr>
+                {{% for row in data %}}
+                <tr>
+                  <th class="table-head">{{ row.datetime }}</th>
+                  <th class="table-head">{{ row.city }}</th>
+                  <th class="table-head">{{ row.state }}</th>
+                  <th class="table-head">{{ row.country }}</th>
+                  <th class="table-head">{{ row.shape }}</th>
+                  <th class="table-head">{{ row.durationMinutes }}</th>
+                  <th class="table-head">{{ row.comments }}</th>
+                </tr>
+                {{% endfor %}}
               </thead>
               <tbody></tbody>
             </table>
