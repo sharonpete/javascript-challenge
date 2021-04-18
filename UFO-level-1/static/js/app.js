@@ -23,6 +23,38 @@ function createTable(table,tableData) {
     return table;
 }
 
+
+var button = d3.select("#filter-btn");
+var form = d3.select("form");
+console.log(button);
+console.log(form);
+button.on("click", runEnter);
+form.on("submit", runEnter);
+
+function runEnter() {
+    d3.event.preventDefault();
+    console.log("button clicked or something!!")
+    var inputElement = d3.select("#datetime");
+    var inputValue = inputElement.property("value");
+    console.log(inputValue);
+
+    var selectedData = data.filter(d => d.datetime === inputValue);
+    console.log(selectedData);
+    // use input value to select data 
+    
+
+    // if no data found for entered date... 
+   
+}
+
+
+function selectByDate(date) {
+    console.log('selectByDate');
+    console.log(data.datetime == date);
+    return data.datetime == date;
+}
+
+
 table = createTable(table,tableData);
 
 // use data from data.js to populate webpage table
