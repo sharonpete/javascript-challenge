@@ -25,63 +25,7 @@ function createTable(newTableData) {
     return;
 }
 
-function updateTable(selectedData){
 
-    
-
-
-
-    // var rows = d3.selectAll('tbody tr')
-    //     .data(selectedData, function (d) { return d;});
-    
-    // console.log(rows);
-
-
-    // rows.enter()
-    //     .append('tr')
-    //     .selectAll('td')
-    //     .data(function (d) {return [d.key, d.value];})
-    //     .enter()
-    //     .append('td')
-    //     .text(function(d) {  return d; });
-        
-    // rows.exit().remove();
-    
-    // var cells = rows.selectAll('td')
-    //     .data(function (d) { return [d.key, d.value];})
-    //     .text(function (d) { return [d.key, d.value];});
-    //     //.text(document.createTextNode(element[key]));
-    
-    // cells.enter()
-    //     .append('td')
-    //     .text(function(d) { return d; });
-    
-    // cells.exit().remove();
-
-    // // var table = document.querySelector("tbody");
-    
-    // // createTable(table, selectedData);
-    // var table = d3.select("tbody")
-    //     .selectAll("tr")
-    //     .data(selectedData)
-    //     .selectAll("td")
-    //     .data(function(row) {
-    //         return columns.map(function(column) {
-    //             return {
-    //                 column: column,
-    //                 value: row[column]
-    //             };
-    //         });
-    //     })
-    //     .text(function(d) {  return d.value; });
-
-    
-    // rows.enter().append("tr")
-    //     .text(function(d) { return d; });
-    
-   
-
-}
 
 var button = d3.select("#filter-btn");
 var form = d3.select("form");
@@ -122,9 +66,7 @@ function runEnter() {
 
 console.log("app.js is loaded");
 var table = document.querySelector("tbody");
-//var table = document.getElementById('ufo-table');
-// var table_header = table.querySelector("thead");
-// var table_body = table.querySelector("tbody");
+
 
 console.log(data.length);
 
