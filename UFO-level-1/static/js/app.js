@@ -5,12 +5,13 @@ var tableData = data;
 
 
 
-function createTable(table,newTableData) {
+function createTable(newTableData) {
     console.log('createTable');
-    
-    console.log(table.rows.length);
+    console.log(newTableData.length);
+    //console.log(table.rows.length);
     
     var tbody = d3.select("tbody");
+    tbody.html("");
     
     newTableData.forEach(function(ufo_report){
         var row =  tbody.append("tr");
@@ -25,32 +26,41 @@ function createTable(table,newTableData) {
 }
 
 function updateTable(selectedData){
-    var rows = d3.selectAll('tbody tr')
-        .data(selectedData, function (d) { return d;});
-    
-    rows.enter()
-        .append('tr')
-        .selectAll('td')
-        .data(function (d) {return [d.key, d.value];})
-        .enter()
-        .append('td')
-        .text(function(d) {  return d; });
-        
-    rows.exit().remove();
-    
-    var cells = rows.selectAll('td')
-        .data(function (d) { return [d.key, d.value];})
-        .text(document.createTextNode(element[key]));
-    
-    cells.enter()
-        .append('td')
-        .text(function(d) { return d; });
-    
-    cells.exit().remove();
 
-    var table = document.querySelector("tbody");
     
-    createTable(table, selectedData);
+
+
+
+    // var rows = d3.selectAll('tbody tr')
+    //     .data(selectedData, function (d) { return d;});
+    
+    // console.log(rows);
+
+
+    // rows.enter()
+    //     .append('tr')
+    //     .selectAll('td')
+    //     .data(function (d) {return [d.key, d.value];})
+    //     .enter()
+    //     .append('td')
+    //     .text(function(d) {  return d; });
+        
+    // rows.exit().remove();
+    
+    // var cells = rows.selectAll('td')
+    //     .data(function (d) { return [d.key, d.value];})
+    //     .text(function (d) { return [d.key, d.value];});
+    //     //.text(document.createTextNode(element[key]));
+    
+    // cells.enter()
+    //     .append('td')
+    //     .text(function(d) { return d; });
+    
+    // cells.exit().remove();
+
+    // // var table = document.querySelector("tbody");
+    
+    // // createTable(table, selectedData);
     // var table = d3.select("tbody")
     //     .selectAll("tr")
     //     .data(selectedData)
@@ -93,11 +103,17 @@ function runEnter() {
     var selectedData = data.filter(d => d.datetime === inputValue);
     console.log(selectedData);
     
+    if (selectedData != 0) {
+        createTable(selectedData);
+    } else {
+        // no data found for entered date... 
+        // 
+        createTable(tableData);
+    }
+
     
-    //var ufo_table = document.querySelector("#ufo-table");
-    //createTable(table,selectedData);
-    updateTable(selectedData);
-    // if no data found for entered date... 
+    
+    
    
 }
 
@@ -112,7 +128,7 @@ var table = document.querySelector("tbody");
 
 console.log(data.length);
 
-createTable(table,tableData);
+createTable(tableData);
 
 // use data from data.js to populate webpage table
 
