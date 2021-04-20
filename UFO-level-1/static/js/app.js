@@ -1,8 +1,19 @@
 // from data.js
 var tableData = data;
 //console.log(data);
+console.log("app.js is loaded");
 
+console.log(data.length);
 
+// use data from data.js to populate webpage table
+createTable(tableData);
+
+var button = d3.select("#filter-btn");
+var form = d3.select("form");
+console.log(button);
+console.log(form);
+button.on("click", runEnter);
+form.on("submit", runEnter);
 
 
 function createTable(newTableData) {
@@ -21,18 +32,10 @@ function createTable(newTableData) {
             cell.text(value);
         });
     });
-    console.log(table);
+    
     return;
 }
 
-
-
-var button = d3.select("#filter-btn");
-var form = d3.select("form");
-console.log(button);
-console.log(form);
-button.on("click", runEnter);
-form.on("submit", runEnter);
 
 function runEnter() {
     // Prevent the page from refreshing
@@ -51,27 +54,11 @@ function runEnter() {
         createTable(selectedData);
     } else {
         // no data found for entered date... 
-        // 
+        // reset the table with the full dataset
         createTable(tableData);
     }
-
-    
-    
-    
    
 }
 
-
-
-
-console.log("app.js is loaded");
-var table = document.querySelector("tbody");
-
-
-console.log(data.length);
-
-createTable(tableData);
-
-// use data from data.js to populate webpage table
 
 
