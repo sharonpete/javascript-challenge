@@ -89,13 +89,14 @@ function runEnter() {
     var inputValue = inputElement.property("value");
     console.log(inputValue);
 
+    // use input value to select data 
     var selectedData = data.filter(d => d.datetime === inputValue);
     console.log(selectedData);
-    // use input value to select data 
+    
     
     //var ufo_table = document.querySelector("#ufo-table");
     //createTable(table,selectedData);
-    updateTable(table, selectedData);
+    updateTable(selectedData);
     // if no data found for entered date... 
    
 }
