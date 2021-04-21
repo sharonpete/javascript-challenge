@@ -7,4 +7,6 @@ javascript homework - javascript and DOM manipulation
 - Note to self:  creating an HTML table by hand is possible, but way too much work, too error prone.  With some digging, found a much cleaner approach as reflected in the function createTable.  All of the day is showing up on the web page.
 - The Button and the Form are working using d3.select.  Collecting the actual value entered by the user.
 - Added a filter to filter by the entered date.  Works.  So far.
+- All of UFO-1 is working.  After trying to build an updateTable function and realizing that I had taken way too complex a path... and then relistening to the 14.3 class lecture, I got way smarter on how to solve this.
+- UFO-2
 
