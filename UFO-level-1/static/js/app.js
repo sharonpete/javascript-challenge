@@ -22,7 +22,11 @@ resetButton.on("click", resetTable);
 
 function resetTable(){
     createTable(tableData);
-    d3.select("#datetime>placeholder").text("freakout");
+    d3.select("#datetime").attr("placeholder","1/11/2011");
+    d3.select("#city").attr("placeholder","el cajon");
+    d3.select("#state").attr("placeholder","ca");
+    d3.select("#country").attr("placeholder","us");
+    d3.select("#shape").attr("placeholder","triangle");
 }
 
 function createTable(newTableData) {
