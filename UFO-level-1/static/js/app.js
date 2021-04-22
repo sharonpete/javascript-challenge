@@ -13,8 +13,11 @@ var resetButton = d3.select("#reset-btn");
 var form = d3.select("form");
 console.log(button);
 console.log(form);
+// the code commented out were for UFO-1.  
 //button.on("click", runEnter);
 //form.on("submit", runEnter);
+
+// the code below does everything for UFO-1 and then UFO-2, too!
 button.on("click", runEnter2);
 form.on("submit", runEnter2);
 
@@ -22,21 +25,20 @@ resetButton.on("click", resetTable);
 
 function resetTable(){
     createTable(tableData);
+    
     d3.select("#datetime").attr("placeholder","1/11/2011");
-    d3.select("#city").attr("placeholder","el cajon");
+    d3.select("#city").attr("Value","el cahon");
     d3.select("#state").attr("placeholder","ca");
     d3.select("#country").attr("placeholder","us");
     d3.select("#shape").attr("placeholder","triangle");
+    
+    
 }
 
 function createTable(newTableData) {
-    // console.log(newTableData);
-    // if (newTableData == "") {
-    //     newTableData = tableData
-    // }
+    
     console.log('createTable');
     console.log(newTableData.length);
-    //console.log(table.rows.length);
     
     var tbody = d3.select("tbody");
     tbody.html("");
